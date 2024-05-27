@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 });
 
 //port
-const port = process.env.port || 5000;
+const port = process.env.port;
 app.listen(port, () => {
   console.log(
     `Server Running on ${process.env.DEV_MODE} mode on port ${port}`.bgCyan
