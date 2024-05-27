@@ -23,7 +23,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 //static file use
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 //Middelwire
 app.use(cors());
@@ -36,7 +36,7 @@ app.use("/api/v1/category", CategoryRoute);
 app.use("/api/v1/product", productRoutes);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
 //rest api
 app.get("/", (req, res) => {
@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 });
 
 //port
-const port = process.env.port || 5000;
+const port = process.env.port;
 app.listen(port, () => {
   console.log(
     `Server Running on ${process.env.DEV_MODE} mode on port ${port}`.bgCyan
